@@ -27,7 +27,24 @@
 	  {
 	    "enablePullDownRefresh" : false
 	  }
-	}],
+	}
+],
+"subPackages": [
+  {
+    "root": "subpkg",
+    "pages": [
+      {
+        "path" : "goods_detail/goods_detail",
+        "style" : {}
+      },
+      {
+        "path" : "goods_list/goods_list",
+        "style" : 
+        {}
+      }
+    ]
+  }
+],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "黑马优购",
