@@ -1,6 +1,6 @@
 <template>
   <view>
-    
+    列表页面
   </view>
 </template>
 
