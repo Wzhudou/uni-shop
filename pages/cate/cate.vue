@@ -1,5 +1,7 @@
 <template>
   <view>
+    <!-- 使用自定义的搜索组件 -->
+    <my-search @click="gotoSearch"></my-search>
     <view class="scroll-view-container">
       <!-- 左侧滑动区域 -->
       <scroll-view scroll-y="true" :style="{height: wh + 'px'}" class="left-scroll-view">
@@ -42,7 +44,7 @@
     onLoad() {
       const sysInfo = uni.getSystemInfoSync()
       // console.log(sysInfo);
-      this.wh = sysInfo.windowHeight
+      this.wh = sysInfo.windowHeight - 50 // 减 50 的原因是 搜索框的高度
       
       this.getCateList()
     },
@@ -69,7 +71,14 @@
         uni.navigateTo({
           url: '/subpkg/goods_list/goods_list?cid=' + item.cat_id
         })
+      },
+      
+      gotoSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
       }
+      
     },
   }
 </script>
