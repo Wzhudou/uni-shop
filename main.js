@@ -14,6 +14,16 @@ $http.beforeRequest = function(options) {
   uni.showLoading({
     title: '数据加载中...'
   })
+  
+  // 添加token
+  // console.log(options);
+  // 微信支付，需要身份认证（登录之后才允许调用支付相关的接口）
+  // 判断当前请求的是否为有权限的接口
+  if(options.url.includes('/my/')) {
+    options.header = {
+      Authorization: store.state.m_user.token
+    }
+  }
 }
 
 // 响应拦截器
